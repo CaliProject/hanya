@@ -1,0 +1,104 @@
+.Nav {
+  height: 65px;
+  background: $secondary-background;
+  background-color: rgba($secondary-background, .8);
+  background-image: linear-gradient(to bottom, $secondary-background, rgba($secondary-background, .4));
+  color: $font-color;
+
+  > div {
+    margin-top: 5px;
+  }
+
+  a {
+    color: $link-color;
+    font-weight: bold;
+
+    &:hover {
+      color: $link-hover;
+      background: none !important;
+    }
+  }
+
+  .navbar-brand {
+    padding: 8px 20px;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .navbar-toggle {
+    border-color: #fee;
+
+    .icon-bar {
+      background: #fee;
+    }
+  }
+
+  .search-bar {
+    line-height: 50px;
+    position: relative;
+    margin: 0 10px;
+
+    input[type=text] {
+      vertical-align: middle;
+      height: 30px;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      color: #999;
+      background: rgba(255,255,255,.25);
+      padding-right: 12px;
+      padding-left: 30px;
+      font-weight: 600;
+      @include ts();
+
+      &:focus,&:hover {
+        background: rgba(255,255,255, .95);
+        + i.fa-search {
+          color: #111;
+        }
+      }
+    }
+
+    i.fa-search {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      margin-top: -7px;
+      color: #999;
+      @include ts();
+    }
+  }
+
+  .avatar {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin: 0 .5em;
+  }
+}
+
+.dropdown-menu > li > a {
+  padding: .8em 20px;
+}
+
+.nav .open > a, .nav a:active, .nav a:focus {
+  background: transparent !important;
+  color: $link-hover;
+}
+
+li.on:after {
+  position: absolute;
+  content: '';
+  bottom: -15px;
+  width: 0;
+  height: 0;
+  border-color: rgba($secondary-background, .95) transparent transparent;
+  border-width: 6px 6px 0;
+  border-style: solid;
+  display: block;
+  left: 50%;
+  margin-left: -6px;
+}

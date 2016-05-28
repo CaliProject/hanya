@@ -1,0 +1,31 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font;
+  background: $primary-background;
+  padding-top: 60px;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.Panel {
+  @extend .panel;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .Content:after, .Content:before {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
