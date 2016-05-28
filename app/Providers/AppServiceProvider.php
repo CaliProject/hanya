@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Hanya\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

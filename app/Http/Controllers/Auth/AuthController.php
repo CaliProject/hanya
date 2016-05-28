@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Hanya\Http\Controllers\Auth;
 
-use App\User;
+use Hanya\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Hanya\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

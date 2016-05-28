@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Hanya\Events;
 
 abstract class Event
 {
