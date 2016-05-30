@@ -4,9 +4,9 @@
 
 @section('base.content')
     <div class="Admin">
-
-        @include('layouts.partials.admin-sidebar')
-
+        @if(Auth::check())
+            @include('layouts.partials.admin-sidebar')
+        @endif
         <main class="Container">
 
             <h2 class="title">@yield('admin.title')</h2>
