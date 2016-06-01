@@ -8,9 +8,9 @@
             @include('layouts.partials.admin-sidebar')
         @endif
         <main class="Container">
-
-            <h2 class="title">@yield('admin.title')</h2>
-
+            @if(Auth::check())
+                @include('layouts.partials.admin-breadcrumb')
+            @endif
             @yield('admin.content')
 
         </main>
@@ -24,4 +24,9 @@
 
 @push('scripts.footer')
 <script src="{{ url('assets/js/admin.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.summernote').summernote();
+    });
+</script>
 @endpush

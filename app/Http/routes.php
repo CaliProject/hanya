@@ -19,5 +19,14 @@ Route::group(['middleware' => ['web']], function (){
     Route::auth();
     Route::group(['prefix' => 'manager'], function (){
         Route::get('','ManagerController@index');
+        Route::group(['prefix' => 'culture'], function (){
+            Route::get('','ManagerController@showCulture');
+            Route::get('add','ManagerController@showCultureAdd');
+            Route::get('edit/{culture}','ManagerController@showCultureEdit');
+            Route::get('detail/{culture}','ManagerController@showCultureDetail');
+            Route::post('add','ManagerController@addCulture');
+            Route::patch('edit/{culture}','ManagerController@editCulture');
+            Route::delete('/{culture}','ManagerController@deleteCulture');
+        });
     });
 });
