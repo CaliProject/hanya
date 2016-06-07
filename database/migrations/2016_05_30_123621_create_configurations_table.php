@@ -18,6 +18,7 @@ class CreateConfigurationsTable extends Migration
             $table->longText('data');
             $table->timestamps();
         });
+        \Hanya\Configuration::initData();
     }
 
     /**

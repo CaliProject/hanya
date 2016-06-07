@@ -17,6 +17,7 @@ class CreateAboutsTable extends Migration
             $table->longText('body');
             $table->timestamps();
         });
+        \Hanya\About::create(['body' => '初始化！']);
     }
 
     /**

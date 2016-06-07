@@ -10,8 +10,8 @@
     <div class="row">
         <div class="col-md-12">
             <blockquote>
-                <b>文章总数: {{ $count }}</b>
-                <a href="{{ url('manager/culture/add') }}" class="btn btn-info pull-right"><i class="fa fa-plus"></i>发布文章</a>
+                <b>文章总数: <span id="count">{{ $count }}</span></b>
+                <a href="{{ url('manage/culture/add') }}" class="btn btn-info pull-right"><i class="fa fa-plus"></i>发布文章</a>
             </blockquote>
         </div>
         <div class="col-md-12">
@@ -25,25 +25,25 @@
                 </thead>
                 <tbody>
                 @foreach($cultures as $culture)
-                    <tr>
+                    <tr data-id="{{ $culture->id }}">
                         <td><i class="fa fa-envira"></i></td>
                         <td>{{ str_limit($culture->title,20) }}</td>
                         <td>{{ $culture->author }}</td>
                         <td>{{ $culture->created_at }}</td>
                         <td>
-                            <a href="{{ $culture->editLink() }}"><i class="fa fa-pencil fa-2x"></i></a>
-                            <a href="javascript:;"><i class="fa fa-close fa-2x"></i></a>
+                            <a href="{{ $culture->editLink() }}"><i class="fa fa-pencil fa-2x"></i></a>&nbsp;
+                            <a href="javascript:;" data-id="{{ $culture->id }}" onclick="Delete($(this))"><i class="fa fa-close fa-2x"></i></a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+            <div class="pagination-home">
+                {!! $cultures->render() !!}
+            </div>
         </div>
     </div>
+
 @stop
 
-@push('header')
-<script>
-    var CONTENT = "{!! addslashes($post->content) !!}";
-</script>
-@endpush
+@include('admin.delete-script',['url' => 'culture'])

@@ -1,4 +1,4 @@
-<form action="{{ url()->current() }}" method="POST" class="Form editor" >
+<form action="{{ url()->current() }}" method="POST" class="Form editor">
     {!! csrf_field() !!}
     {!! isset($method) ? method_field($method) : '' !!}
     <div class="form-group{{ $errors->has('title') ? 'has-error' : '' }}">
@@ -29,11 +29,12 @@
         @endif
     </div>
     <div class="form-group">
-        <label class="control-label">文章内容:</label>
+        <label class="control-label" required>文章内容:</label>
         <div class="summernote"></div>
     </div>
     <div class="form-group">
         <button type="submit" class="confirm-button">{{ $button }}</button>
-        <button type="button" class="confirm-button delete">删除</button>
+        <br>
+        <a href="{{ url('manage/culture') }}" class="btn btn-danger btn-block">返回</a>
     </div>
 </form>

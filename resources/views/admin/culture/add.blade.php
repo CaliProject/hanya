@@ -3,7 +3,7 @@
 @section('admin.title','香道文化-发布文章')
 
 @section('breadcrumb')
-    <li><a href="{{ url('manager/culture') }}">香道文化</a></li>
+    <li><a href="{{ url('manage/culture') }}">香道文化</a></li>
     <li class="active"><span>发布文章</span></li>
 @stop
 
@@ -17,3 +17,5 @@
         </div>
     </div>
 @stop
+
+@include('admin.culture.partials.scripts')

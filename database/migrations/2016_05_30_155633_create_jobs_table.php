@@ -17,6 +17,8 @@ class CreateJobsTable extends Migration
             $table->longText('body');
             $table->timestamps();
         });
+        
+        \Hanya\Job::create(['body' => 'init']);
     }
 
     /**

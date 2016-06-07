@@ -25,8 +25,6 @@
 @push('scripts.footer')
 <script src="{{ url('assets/js/admin.js') }}"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('.summernote').summernote();
-    });
+
 </script>
 @endpush
