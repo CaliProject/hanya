@@ -109,5 +109,16 @@ class Configuration extends Model
                  ]
              ]
         ]);
+        self::home([
+            'image'        => '主页图片',
+            'link'         => '主页视频',
+            'footer-about' => [
+                'copyright' => '版权所有',
+                'telephone' => '移动电话',
+                'wechat'    => '微信公众平台账号',
+                'QQ'        => 'QQ号码',
+                'address'   => '公司地址'
+            ],
+        ]);
     }
 }

@@ -2,17 +2,18 @@
 
 namespace Hanya\Http\Controllers;
 
+use File;
+use Hanya\Job;
 use Hanya\About;
-use Hanya\Configuration;
+use Hanya\Train;
 use Hanya\Course;
 use Hanya\Culture;
+use Hanya\Teacher;
 use Hanya\APIResponse;
+use Hanya\Configuration;
+use Illuminate\Http\Request;
 use Hanya\Http\Requests\LinkFormRequest;
 use Hanya\Http\Requests\TeacherRequest;
-use Hanya\Job;
-use Hanya\Teacher;
-use Hanya\Train;
-use Illuminate\Http\Request;
 use Hanya\Http\Requests\CultureCourseTrainRequest;
 
 class ManagerController extends Controller
@@ -54,7 +55,13 @@ class ManagerController extends Controller
         return $this->successResponse([
             'url' => $url
         ]);
+    }
 
+    protected function deleteImage($image)
+    {
+        $image = substr($image,1,strlen($image)-1);
+
+        return File::delete($image);
     }
 
     /**
@@ -281,7 +288,9 @@ class ManagerController extends Controller
      */
     public function editTeacher(TeacherRequest $request,Teacher $teacher)
     {
-        return $teacher->update($request->except(['_token','_method'])) ? $this->successResponse('修改成功！') : $this->errorResponse('修改失败！');
+        $this->deleteImage($teacher->image);
+
+        return $teacher->update($request->except(['_token','_method'])) ? $this->successResponse('修改成功！','manage/teacher/edit/'.$teacher->id) : $this->errorResponse('修改失败！');
     }
 
     /**
@@ -293,6 +302,8 @@ class ManagerController extends Controller
      */
     public function deleteTeacher(Teacher $teacher)
     {
+        $this->deleteImage($teacher->image);
+
         return $teacher->delete() ? $this->successResponse(['message' => '删除成功！','url' => Teacher::count()]) : $this->errorResponse('删除失败！');
     }
 
@@ -538,5 +549,15 @@ class ManagerController extends Controller
         $count = count($links->captions);
 
         return Configuration::link($links) ? $this->successResponse(['message' => '删除成功！','num' => $count]) : $this->errorResponse('删除失败！');
+    }
+
+    public function showHome()
+    {
+        $home         = Configuration::home();
+        $image        = $home->image;
+        $link         = $home->link;
+        $footer_about = $home->footer_about;
+
+        return view('admin.home.index',compact('image','link','footer_about'));
     }
 }

@@ -25,7 +25,7 @@
                 <li{{ request()->is('course*') ? ' class=on ' : '' }}><a href="{{ url('course') }}">课程通知</a></li>
                 <li{{ request()->is('teacher*') ? ' class=on ' : '' }}><a href="{{ url('teacher') }}">师资力量</a></li>
                 <li{{ request()->is('train*') ? ' class=on ' : '' }}><a href="{{ url('train') }}">培训动态</a></li>
-                <li{{ request()->is('about*') ? ' class=on ' : '' }}><a href="{{ url('about') }}">关于我们</a></li>
+                <li{{ request()->is('about*') ? ' class=on ' : '' }}><a href="{{ url('about') }}">关于汉雅</a></li>
                 <li{{ request()->is('') ? ' class=on ' : '' }}><a href="{{ url('') }}">汉雅微博</a></li>
                 <li{{ request()->is('job*') ? ' class=on ' : '' }}><a href="{{ url('job') }}">招贤纳士</a></li>
             </ul>

@@ -66,6 +66,7 @@
                     if(file.status == 'success') {
                         var json = eval('('+file.xhr.response+')');
                         $("<input type='hidden' name='image' value='" + json.url + "'>").appendTo($("#dropzone"));
+                        $("#teacher-image").src = json.url;
                     } else {
                         swal('错误！','上传失败！','warning');
                     }

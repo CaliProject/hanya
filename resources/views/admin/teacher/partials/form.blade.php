@@ -2,7 +2,7 @@
     {{ csrf_field() }}
     {{ isset($method) ? method_field($method) : '' }}
     <div class="form-group{{ $errors->has('name') ? 'has-error' : '' }}">
-        <label for="name" class="control-label">老师姓名:</label>
+        <label for="name" class="control-label" required>老师姓名:</label>
         <input type="text" class="form-control important" id="name" name="name" value="{{ empty($teacher) ? old('name') : $teacher->name }}">
         @if($errors->has('name'))
             <div class="help-block">
@@ -11,7 +11,7 @@
         @endif
     </div>
     <div class="form-group{{ $errors->has('is_good') ? 'has-error' : '' }}">
-        <label for="is_good" class="control-label">名师:</label>
+        <label for="is_good" class="control-label" required>名师:</label>
         <select name="is_good" id="is_good" class="form-control important">
             @if(!empty($teacher) && $teacher->is_good)
                 <option value="1" selected>名师</option>
@@ -28,7 +28,10 @@
         @endif
     </div>
     <div class="form-group{{ $errors->has('image') ? 'has-error' : '' }}">
-        <label for="image" class="control-label">老师照片:</label>
+        <label for="image" class="control-label" required>老师照片:</label>
+        @if($teacher)
+            <img id="teacher-image" src="{{ $teacher->image }}" alt="{{ $teacher->name }}" class="img-thumbnail">
+        @endif
         <div class="dropzone" id="dropzone"></div>
         @if($errors->has('image'))
             <div class="help-block">
@@ -37,7 +40,7 @@
         @endif
     </div>
     <div class="form-group">
-        <label for="body" class="control-label">老师介绍:</label>
+        <label for="body" class="control-label" required>老师介绍:</label>
         <div class="summernote"></div>
     </div>
     <div class="form-group">
