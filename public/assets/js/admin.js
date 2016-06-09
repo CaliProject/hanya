@@ -94,9 +94,60 @@ $(function () {
             }
         });
     });
-    Dropzone.options.uploader = {
-        paramName: 'image',
-        dictDefaultMessage: '拖拽或者点击上传图片'
-    };
+    $("form:not(.summernote)").each(function () {
+        $(this).on('submit', function (ev) {
+            ev.preventDefault();
+
+            $.ajax({
+                url: this.action,
+                type: $(this).find('input[name=_method]') == undefined ? this.method : $(this).find('input[name=_method]').attr('value'),
+                dataType: 'json',
+                data: $(this).serialize(),
+                success: function (data) {
+                    if (typeof(data.redirect) == 'undefined') {
+                        if (data.status == 'success') {
+                            toastr.success(data.message);
+                        } else {
+                            toastr.error(data.message);
+                        }
+                        return false;
+                    } else {
+                        swal({
+                            title: '删除成功！',
+                            text: '2秒后自动跳转',
+                            type: 'success',
+                            timer: 2000,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: '#DD6B55',
+                            confirmButtonText: '确定'
+                        },function () {
+                            window.location.href = data.redirect;
+                        });
+
+                    }
+                },
+                error: function (error) {
+                    if (error.status === 422) {
+                        var errors = JSON.parse(error.responseText);
+                        for (var er in errors) {
+                            var sel = '[name=' + er +']',
+                                groupEl = $($(form).find(sel)[0]).parents('.form-group')[0];
+                            // Add error class to the form-group
+                            $(groupEl).addClass('has-error shaky');
+                            setTimeout(function () {
+                                $(groupEl).removeClass('has-error shaky')
+                            }, 8000);
+
+                            $(sel).focus();
+                            toastr.error('<h4>'+errors[er][0]+'</h4>');
+                        }
+                    } else {
+                        toastr.error(error.responseText);
+                    }
+                }
+            })
+        }.bind(this));
+    });
 });
 //# sourceMappingURL=admin.js.map

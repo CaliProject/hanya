@@ -104,6 +104,8 @@ Route::group(['middleware' => ['web']], function (){
         //汉雅主页的后台路由
         Route::group(['prefix' => 'home'], function (){
             Route::get('','ManagerController@showHome');
+            Route::patch('image','ManagerController@editHomeImage');
+            Route::patch('link','ManagerController@editHomeLink');
         });
     });
 });

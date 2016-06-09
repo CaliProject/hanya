@@ -13,15 +13,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * 显示汉雅主页
@@ -39,7 +30,7 @@ class HomeController extends Controller
      * 
      * @return mixed
      */
-    public function showabout()
+    public function showAbout()
     {
         $about = About::first()->body;
 

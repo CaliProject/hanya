@@ -29,7 +29,7 @@
     </div>
     <div class="form-group{{ $errors->has('image') ? 'has-error' : '' }}">
         <label for="image" class="control-label" required>老师照片:</label>
-        @if($teacher)
+        @if(!empty($teacher))
             <img id="teacher-image" src="{{ $teacher->image }}" alt="{{ $teacher->name }}" class="img-thumbnail">
         @endif
         <div class="dropzone" id="dropzone"></div>

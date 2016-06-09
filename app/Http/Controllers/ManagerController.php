@@ -551,6 +551,11 @@ class ManagerController extends Controller
         return Configuration::link($links) ? $this->successResponse(['message' => '删除成功！','num' => $count]) : $this->errorResponse('删除失败！');
     }
 
+    /**
+     * 显示汉雅主页页面
+     * 
+     * @return mixed
+     */
     public function showHome()
     {
         $home         = Configuration::home();
@@ -559,5 +564,26 @@ class ManagerController extends Controller
         $footer_about = $home->footer_about;
 
         return view('admin.home.index',compact('image','link','footer_about'));
+    }
+
+    public function editHomeImage(Request $request)
+    {
+        if (empty($request->input('image'))) {
+            return $this->errorResponse('修改失败！请重试！');
+        } else {
+            $home = Configuration::home();
+            $this->deleteImage($home->image);
+            $home->image = $request->input('image');
+
+            return Configuration::home($home) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试');
+        }
+    }
+
+    public function editHomeLink(Request $request)
+    {
+        $home = Configuration::home();
+        $home->link = $request->input('link');
+
+        return Configuration::home($home) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
     }
 }

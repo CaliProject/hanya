@@ -112,13 +112,18 @@ class Configuration extends Model
         self::home([
             'image'        => '主页图片',
             'link'         => '主页视频',
-            'footer-about' => [
+            'footer_about' => [
                 'copyright' => '版权所有',
                 'telephone' => '移动电话',
                 'wechat'    => '微信公众平台账号',
-                'QQ'        => 'QQ号码',
+                'qq'        => 'QQ号码',
                 'address'   => '公司地址'
             ],
+        ]);
+        self::social([
+            'wechat'  => '微信公众号名字',
+            'weibo'   => '微博的链接',
+            'qq'      => 'QQ号码'
         ]);
     }
 }
