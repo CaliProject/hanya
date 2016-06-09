@@ -94,9 +94,5 @@ $(function () {
             }
         });
     });
-    Dropzone.options.uploader = {
-        paramName: 'image',
-        dictDefaultMessage: '拖拽或者点击上传图片'
-    };
 });
 //# sourceMappingURL=admin.js.map
