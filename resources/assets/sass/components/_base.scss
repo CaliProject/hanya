@@ -18,6 +18,11 @@ a {
   }
 }
 
+.Main {
+  padding: 2.5em 0;
+  margin: .25em 0;
+}
+
 .Panel {
   @extend .panel;
   border-radius: 5px;
@@ -27,5 +32,105 @@ a {
     display: table;
     content: " ";
     clear: both;
+  }
+}
+
+.panel--hanya {
+  .panel-heading {
+    &:before {
+      content: '';
+      width: 25px;
+      height: 25px;
+      background: url("/logo.png") no-repeat center center;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .panel-title {
+      display: inline;
+      vertical-align: super;
+    }
+
+    .more {
+      float: right;
+
+      &:before {
+        font-family: "FontAwesome";
+        content: '\f101';
+        font-style: normal;
+        font-size: 1.3em;
+        display: block;
+      }
+    }
+  }
+}
+
+.Video {
+  &.Video--full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.35);
+    }
+  }
+}
+
+.List {
+  list-style: none;
+  padding: 0;
+
+  &.List--bullet {
+    list-style-type: circle;
+    padding-left: 1em;
+  }
+
+  &.List--filled {
+    list-style-type: inherit;
+    padding-left: 1em;
+  }
+
+  &.List--big {
+    li {
+      margin: 1em 0 !important;
+    }
+  }
+
+  li {
+    margin: .8em 0;
+
+    &:first-of-type {
+      margin-top: 0 !important;
+    }
+
+    time {
+      float: right;
+      color: #9f9f9f;
+    }
+  }
+}
+
+.Teacher {
+  display: block;
+  text-align: center;
+  outline: none;
+
+  .Teacher__avatar {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 145px;
+    margin: .7em 0;
+  }
+
+  .Teacher__name {
+    font-weight: 500;
+    line-height: 35px;
   }
 }

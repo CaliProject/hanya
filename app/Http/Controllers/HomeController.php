@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
     /**
      * 显示汉雅主页
      * Show the application dashboard.

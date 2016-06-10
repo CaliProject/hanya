@@ -581,8 +581,12 @@ class ManagerController extends Controller
 
     public function editHomeLink(Request $request)
     {
+        $str = $request->input('link');
+        $res = explode('==',$str);
+        $pos = strpos($res[0],'id');
+        $link = substr($res[0],$pos+3);
         $home = Configuration::home();
-        $home->link = $request->input('link');
+        $home->link = $link;
 
         return Configuration::home($home) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
     }

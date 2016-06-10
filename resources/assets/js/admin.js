@@ -82,7 +82,7 @@ $(function () {
             }
         });
     });
-    $("form:not(.summernote)").each(function () {
+    $("form:has([ajax])").each(function () {
         $(this).on('submit', function (ev) {
             ev.preventDefault();
 
@@ -101,7 +101,7 @@ $(function () {
                         return false;
                     } else {
                         swal({
-                            title: '删除成功！',
+                            title: '修改成功！',
                             text: '2秒后自动跳转',
                             type: 'success',
                             timer: 2000,

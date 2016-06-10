@@ -94,7 +94,7 @@ $(function () {
             }
         });
     });
-    $("form:not(.summernote)").each(function () {
+    $("form:has([ajax])").each(function () {
         $(this).on('submit', function (ev) {
             ev.preventDefault();
 
