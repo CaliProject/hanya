@@ -65,7 +65,7 @@ class HomeController extends Controller
      */
     public function showCulture()
     {
-        $cultures = Culture::orederBy('created_at','desc')->paginate(30);
+        $cultures = Culture::orderBy('created_at','desc')->paginate(30);
 
         return view('culture.index',compact('cultures'));
     }

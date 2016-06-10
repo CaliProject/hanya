@@ -2,8 +2,9 @@
   height: 65px;
   background: $secondary-background;
   background-color: rgba($secondary-background, .8);
-  background-image: linear-gradient(to bottom, $secondary-background, rgba($secondary-background, .4));
+  background-image: linear-gradient(to bottom, $secondary-background, rgba($secondary-background, .5));
   color: $font-color;
+  box-shadow: 0 1px 5px rgba(5,5,5,.2);
 
   > div {
     margin-top: 5px;

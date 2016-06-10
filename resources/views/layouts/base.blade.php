@@ -21,9 +21,11 @@
     @stack('head')
 
 </head>
-<body id="app">
+<body id="app" class="@stack('body.class')">
 
     @include('layouts.partials.app-navbar')
+
+    @yield('header')
 
     <main class="Main">
         @yield('base.content')
