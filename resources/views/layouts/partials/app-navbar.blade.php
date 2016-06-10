@@ -29,6 +29,13 @@
                 <li{{ request()->is('') ? ' class=on ' : '' }}><a href="{{ url('') }}">汉雅微博</a></li>
                 <li{{ request()->is('job*') ? ' class=on ' : '' }}><a href="{{ url('job') }}">招贤纳士</a></li>
             </ul>
+            @if(Auth::check())
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ url('manage') }}">后台管理</a>
+                    </li>
+                </ul>
+            @endif
         </div>
     </div>
 </nav>

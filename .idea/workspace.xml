@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c8b81e2-a29b-4471-af46-90ff9d05be9d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/app.css" afterPath="$PROJECT_DIR$/public/assets/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/app.css.map" afterPath="$PROJECT_DIR$/public/assets/css/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/components/_base.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/components/_base.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/components/_nav.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/components/_nav.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/components/_settings.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/components/_settings.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/culture/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/culture/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/culture/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/culture/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php" />
     </list>
     <ignored path="hanya.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +50,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/culture/show.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="644">
-                  <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+                <state relative-caret-position="552">
+                  <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -73,8 +63,18 @@
           <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
-                  <caret line="23" column="18" selection-start-line="7" selection-start-column="12" selection-end-line="23" selection-end-column="18" />
+                <state relative-caret-position="1679">
+                  <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app-navbar.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="736">
+                  <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -137,8 +137,8 @@
           <file leaf-file-name="article.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/assets/sass/components/article.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="897">
-                  <caret line="39" column="20" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="20" />
+                <state relative-caret-position="483">
+                  <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -201,7 +201,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/home/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Configuration.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ManagerController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
@@ -222,6 +221,7 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/components/_base.scss" />
         <option value="$PROJECT_DIR$/resources/views/culture/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/components/article.scss" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php" />
       </list>
     </option>
   </component>
@@ -373,12 +373,12 @@
       <workItem from="1465395119841" duration="1026000" />
       <workItem from="1465431754172" duration="9857000" />
       <workItem from="1465490143054" duration="7000" />
-      <workItem from="1465547047674" duration="6061000" />
+      <workItem from="1465547047674" duration="7143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148216000" />
+    <option name="totallyTimeSpent" value="149298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,13 +515,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/course/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -716,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="18" selection-start-line="7" selection-start-column="12" selection-end-line="23" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -774,16 +759,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/culture/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+        <state relative-caret-position="552">
+          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/components/article.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="483">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1679">
+          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/app-navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
           <folding />
         </state>
       </provider>
