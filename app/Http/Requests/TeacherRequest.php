@@ -29,7 +29,7 @@ class TeacherRequest extends Request
         ];
     }
     
-    public function message()
+    public function messages()
     {
         return [
             'name.required' => '老师姓名必填！',

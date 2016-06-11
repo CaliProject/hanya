@@ -55,7 +55,7 @@ class HomeController extends Controller
      */
     public function showCulture()
     {
-        $cultures = Culture::orederBy('created_at','desc')->paginate(30);
+        $cultures = Culture::orderBy('created_at','desc')->paginate(30);
 
         return view('culture.index',compact('cultures'));
     }
@@ -68,6 +68,9 @@ class HomeController extends Controller
      */
     public function showCultureDetail(Culture $culture)
     {
+        $culture->count++;
+        $culture->save();
+
         return view('culture.show',compact('culture'));
     }
 
@@ -91,6 +94,9 @@ class HomeController extends Controller
      */
     public function showCourseDetail(Course $course)
     {
+        $course->count++;
+        $course->save();
+
         return view('course.show',compact('course'));
     }
 
@@ -101,7 +107,7 @@ class HomeController extends Controller
      */
     public function showTeacher()
     {
-        $teachers = Teacher::orderBy('is_good')->paginate(9);
+        $teachers = Teacher::orderBy('is_good')->paginate(12);
 
         return view('teacher.index',compact('teachers'));
     }
@@ -114,6 +120,9 @@ class HomeController extends Controller
      */
     public function showTeacherDetail(Teacher $teacher)
     {
+        $teacher->count++;
+        $teacher->save();
+
         return view('teacher.show',compact('teacher'));
     }
 
@@ -137,6 +146,9 @@ class HomeController extends Controller
      */
     public function showTrainDetail(Train $train)
     {
+        $train->count++;
+        $train->save();
+
         return view('train.show',compact('train'));
     }
 }

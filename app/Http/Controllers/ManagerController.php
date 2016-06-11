@@ -3,6 +3,7 @@
 namespace Hanya\Http\Controllers;
 
 use File;
+use Hanya\Http\Requests\FooterFormRequest;
 use Hanya\Job;
 use Hanya\About;
 use Hanya\Train;
@@ -12,9 +13,9 @@ use Hanya\Teacher;
 use Hanya\APIResponse;
 use Hanya\Configuration;
 use Illuminate\Http\Request;
-use Hanya\Http\Requests\LinkFormRequest;
 use Hanya\Http\Requests\TeacherRequest;
 use Hanya\Http\Requests\CultureCourseTrainRequest;
+use Hanya\Http\Requests\LinkFormRequest;
 
 class ManagerController extends Controller
 {
@@ -558,12 +559,7 @@ class ManagerController extends Controller
      */
     public function showHome()
     {
-        $home         = Configuration::home();
-        $image        = $home->image;
-        $link         = $home->link;
-        $footer_about = $home->footer_about;
-
-        return view('admin.home.index',compact('image','link','footer_about'));
+        return view('admin.home.index');
     }
 
     public function editHomeImage(Request $request)
@@ -581,13 +577,65 @@ class ManagerController extends Controller
 
     public function editHomeLink(Request $request)
     {
-        $str = $request->input('link');
-        $res = explode('==',$str);
-        $pos = strpos($res[0],'id');
-        $link = substr($res[0],$pos+3);
-        $home = Configuration::home();
-        $home->link = $link;
+        if (empty($request->input('link'))) {
+            return $this->errorResponse('修改失败！请重试！');
+        } else {
+            $str = $request->input('link');
+            $res = explode('==',$str);
+            $pos = strpos($res[0],'id');
+            $link = substr($res[0],$pos+3);
+            $home = Configuration::home();
+            $home->link = $link;
 
-        return Configuration::home($home) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
+            return Configuration::home($home) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
+        }
+    }
+
+    public function editWeibo(Request $request)
+    {
+        $this->validate($request,[
+            'weibo' => 'required'
+        ]);
+        $social = Configuration::social();
+        $social->weibo = $request->input('weibo');
+
+        return Configuration::social($social) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
+    }
+
+    public function editQQ(Request $request)
+    {
+        $this->validate($request,[
+            'qq' => 'required'
+        ]);
+        $social = Configuration::social();
+        $social->qq = $request->input('qq');
+
+        return Configuration::social($social) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
+    }
+
+    public function editWechat(Request $request)
+    {
+        $this->validate($request,[
+            'wechat' => 'required'
+        ]);
+        $social = Configuration::social();
+        $social->wechat->name = $request->input('wechat');
+        if (!empty($request->input('image'))) {
+            $social->wechat->image = $request->input('image');
+        }
+
+        return Configuration::social($social) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
+    }
+
+    public function editFooter(FooterFormRequest $request)
+    {
+        $home = Configuration::home();
+        $home->footer_about->copyright = $request->input('copyright');
+        $home->footer_about->telephone = $request->input('telephone');
+        $home->footer_about->wechat    = $request->input('wechat');
+        $home->footer_about->qq        = $request->input('qq');
+        $home->footer_about->address   = $request->input('address');
+
+        return Configuration::home($home) ? $this->successResponse('修改成功！') : $this->errorResponse('修改失败！请重试！');
     }
 }

@@ -27,7 +27,7 @@
                         <td><i class="fa fa-user"></i></td>
                         <td><a href="{{ $teacher->detailLink() }}">{{ $teacher->name }}</a></td>
                         <td>
-                            @if($teacher->isgood)
+                            @if($teacher->is_good)
                                 是
                             @else
                                 否
@@ -48,3 +48,5 @@
         </div>
     </div>
 @stop
+
+@include('admin.delete-script',['url' => 'teacher'])

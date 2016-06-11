@@ -155,6 +155,7 @@ return [
         Hanya\Providers\AuthServiceProvider::class,
         Hanya\Providers\EventServiceProvider::class,
         Hanya\Providers\RouteServiceProvider::class,
+        Hanya\Providers\ViewComposerServiceProvide::class,
 
     ],
 

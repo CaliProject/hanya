@@ -112,6 +112,7 @@ class Configuration extends Model
         self::home([
             'image'        => '主页图片',
             'link'         => '主页视频',
+            'link_type'    => '视频来源网站类型',
             'footer_about' => [
                 'copyright' => '版权所有',
                 'telephone' => '移动电话',
@@ -121,9 +122,12 @@ class Configuration extends Model
             ],
         ]);
         self::social([
-            'wechat'  => '微信公众号名字',
             'weibo'   => '微博的链接',
-            'qq'      => 'QQ号码'
+            'qq'      => 'QQ号码',
+            'wechat'  => [
+                'name' => '微信公众账号',
+                'image' => '微信公众号二维码',
+            ],
         ]);
     }
 }

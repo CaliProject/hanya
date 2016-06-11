@@ -30,7 +30,19 @@
                         }
                         return false;
                     } else {
-                        window.location.href = data.redirect;
+                        swal({
+                            title: '添加成功！',
+                            text: '2秒后自动跳转',
+                            type: 'success',
+                            timer: 2000,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: '#DD6B55',
+                            confirmButtonText: '确定'
+                        },function () {
+                            window.location.href = data.redirect;
+                        });
+
                     }
                 },
                 error: function (error) {

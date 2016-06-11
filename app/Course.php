@@ -27,4 +27,19 @@ class Course extends Model
     {
         return url('manage/course/detail/'.$this->id);
     }
+
+    public function showLink()
+    {
+        return url('course/'.$this->id);
+    }
+
+    public function next()
+    {
+        return static::where([['created_at','>',$this->created_at],['id','!=',$this->id]])->first();
+    }
+
+    public function previous()
+    {
+        return static::where([['created_at','<',$this->created_at],['id','!=',$this->id]])->first();
+    }
 }

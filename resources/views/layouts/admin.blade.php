@@ -24,7 +24,5 @@
 
 @push('scripts.footer')
 <script src="{{ url('assets/js/admin.js') }}"></script>
-<script type="text/javascript">
-
-</script>
+@stack('admin.scripts')
 @endpush

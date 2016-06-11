@@ -1,7 +1,7 @@
-@push('scripts.footer')
+@push('admin.scripts')
 <script>
     $(function () {
-        $("#dropzone").dropzone({
+        $(".dropzone").dropzone({
             url: "{{ url('upload') }}",
             paramName: "image",
             maxFilesize: 3,
@@ -12,8 +12,7 @@
                 this.on("success",function (file) {
                     if(file.status == 'success') {
                         var json = eval('('+file.xhr.response+')');
-                        $("<input type='hidden' name='image' value='" + json.url + "'>").appendTo($("#dropzone"));
-                        $("#teacher-image").src = json.url;
+                        $("<input type='hidden' name='image' value='" + json.url + "'>").appendTo($(".dropzone"));
                     } else {
                         swal('错误！','上传失败！','warning');
                     }

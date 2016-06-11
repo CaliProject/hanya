@@ -1,4 +1,4 @@
-<form action="{{ url()->current() }}" method="POST" class="Form editor">
+<form action="{{ url()->current() }}" method="POST" class="Form">
     {!! csrf_field() !!}
     {!! isset($method) ? method_field($method) : '' !!}
     <div class="form-group{{ $errors->has('title') ? 'has-error' : '' }}">

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Culture extends Model
 {
+    protected $dates = ['created_at','updated_at'];
+
     //
     protected $guarded = ['_token','_method'];
 
@@ -20,12 +22,27 @@ class Culture extends Model
     }
 
     /**
-     * 文章详情链接
+     * 后台文章详情链接
      * 
      * @return mixed
      */
     public function detailLink()
     {
         return url('manage/culture/detail/'.$this->id);
+    }
+
+    public function showLink()
+    {
+        return url('culture/'.$this->id);
+    }
+    
+    public function next()
+    {
+        return static::where([['created_at','>',$this->created_at],['id','!=',$this->id]])->first();
+    }
+
+    public function previous()
+    {
+        return static::where([['created_at','<',$this->created_at],['id','!=',$this->id]])->first();
     }
 }

@@ -8,17 +8,13 @@
             <div class="panel panel--hanya">
                 <div class="panel-heading">
                     <h4 class="panel-title">香道文化</h4>
-                    {{-- TODO: 查看更多页面 --}}
-                    <a class="more" href="#"></a>
+                    <a class="more" href="{{ url('culture') }}"></a>
                 </div>
                 <div class="panel-body">
                     <ul class="List List--bullet">
-                        {{-- TODO: 香道文化填充 --}}
-                        @for($i = 0; $i < 6; $i++)
-                            <li>
-                                <a href="#">{{ str_limit('香道文化' . str_random(), 20) }}</a>
-                            </li>
-                        @endfor
+                        @foreach($cultures as $culture)
+                            <li><a href="{{ $culture->showLink() }}">{{ str_limit($culture->title,20) }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -28,20 +24,18 @@
                 <div class="panel panel--hanya">
                     <div class="panel-heading">
                         <h4 class="panel-title">课程通知</h4>
-                        {{-- TODO: 查看更多页面 --}}
-                        <a class="more" href="#"></a>
+                        <a class="more" href="{{ url('course') }}"></a>
                     </div>
                     <div class="panel-body">
                         <ul class="List List--big">
-                            {{-- TODO: 课程通知填充 --}}
-                            @for($i = 0; $i < 10; $i++)
+                            @foreach($courses as $course)
                                 <li>
-                                    <a href="#">
-                                        {{ str_limit('课程通知' . str_random(30), 35) }}
-                                        <time datetime="{{ \Carbon\Carbon::now() }}">{{ \Carbon\Carbon::now()->diffForHumans() }}</time>
+                                    <a href="{{ $course->showLink() }}">
+                                        {{ str_limit($course->title,20) }}
+                                        <time>{{ $course->created_at->toDateString() }}</time>
                                     </a>
                                 </li>
-                            @endfor
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -50,17 +44,17 @@
                 <div class="panel panel--hanya">
                     <div class="panel-heading">
                         <h4 class="panel-title">培训动态</h4>
-                        {{-- TODO: 查看更多页面 --}}
-                        <a class="more" href="#"></a>
+                        <a class="more" href="{{ url('train') }}"></a>
                     </div>
                     <div class="panel-body">
                         <ul class="List List--big List--filled">
-                            {{-- TODO: 培训动态填充 --}}
-                            @for($i = 0; $i < 8; $i++)
+                            @foreach($trains as $train)
                                 <li>
-                                    <a href="#">{{ str_limit('培训动态' . str_random(45), 50) }}</a>
+                                    <a href="{{ $train->showLink() }}">
+                                        {{ str_limit($train->title,50) }}
+                                    </a>
                                 </li>
-                            @endfor
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -69,25 +63,22 @@
                 <div class="panel panel--hanya">
                     <div class="panel-heading">
                         <h4 class="panel-title">师资力量</h4>
-                        {{-- TODO: 查看更多页面 --}}
-                        <a class="more" href="#"></a>
+                        <a class="more" href="{{ url('teacher') }}"></a>
                     </div>
                     <div class="panel-body">
-                        {{-- TODO: 师资力量填充, background-image与名字 --}}
-                        @for($i = 0; $i < 3; $i++)
-                            <a href="#" class="Teacher col-md-4">
-                                <div class="Teacher__avatar" style="background-image: url('{{ url('logo.png') }}')"></div>
-                                <span class="Teacher__name">老师 {{ $i + 1 }}</span>
+                        @foreach($teachers as $teacher)
+                            <a href="{{ $teacher->showLink() }}" class="Teacher col-md-4">
+                                <div class="Teacher__avatar" style="background-image: url('{{ $teacher->image }}')"></div>
+                                <span class="Teacher__name">{{ $teacher->name }}</span>
                             </a>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
             <div class="Video Video--full">
-                {{-- TODO: 更改视频src中embed/后的唯一id --}}
-                <iframe src="http://player.youku.com/embed/XMTU5NDczOTMzMg==.html?from=y1.3-idx-beta-1519-23042.223465.5-1" allowfullscreen></iframe>
+                <iframe src="http://player.youku.com/embed/{{ $link }}==" allowfullscreen></iframe>
             </div>
         </div>
     </div>

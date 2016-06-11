@@ -106,6 +106,10 @@ Route::group(['middleware' => ['web']], function (){
             Route::get('','ManagerController@showHome');
             Route::patch('image','ManagerController@editHomeImage');
             Route::patch('link','ManagerController@editHomeLink');
+            Route::patch('weibo','ManagerController@editWeibo');
+            Route::patch('qq','ManagerCOntroller@editQQ');
+            Route::patch('wechat','ManagerController@editWechat');
+            Route::patch('footer','ManagerController@editFooter');
         });
     });
 });

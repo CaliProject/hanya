@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 // Mixins
 @import "mixins";
 
@@ -10,6 +12,7 @@
 @import "components/nav";
 @import "components/footer";
 @import "components/utilities";
+@import "components/article";
 
 // Components - Manage
 @import "manage/base";

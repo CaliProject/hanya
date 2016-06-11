@@ -27,4 +27,19 @@ class Train extends Model
     {
         return url('manage/train/edit/'.$this->id);
     }
+
+    public function showLink()
+    {
+        return url('train/'.$this->id);
+    }
+
+    public function next()
+    {
+        return static::where([['created_at','>',$this->created_at],['id','!=',$this->id]])->first();
+    }
+
+    public function previous()
+    {
+        return static::where([['created_at','<',$this->created_at],['id','!=',$this->id]])->first();
+    }
 }

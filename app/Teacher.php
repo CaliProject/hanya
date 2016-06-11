@@ -27,4 +27,24 @@ class Teacher extends Model
     {
         return url('manage/teacher/detail/'.$this->id);
     }
+    
+    public function showLink()
+    {
+        return url('teacher/'.$this->id);
+    }
+
+    public function next()
+    {
+        return static::where([['created_at','>',$this->created_at],['id','!=',$this->id]])->first();
+    }
+
+    public function previous()
+    {
+        return static::where([['created_at','<',$this->created_at],['id','!=',$this->id]])->first();
+    }
+    
+    public function good()
+    {
+        return static::where('is_good',1)->get();
+    }
 }
