@@ -27,7 +27,7 @@
                 @foreach($cultures as $culture)
                     <tr data-id="{{ $culture->id }}">
                         <td><i class="fa fa-envira"></i></td>
-                        <td>{{ str_limit($culture->title,20) }}</td>
+                        <td><a href="{{ $culture->detailLink() }}">{{ str_limit($culture->title,20) }}</a></td>
                         <td>{{ $culture->author }}</td>
                         <td>{{ $culture->created_at }}</td>
                         <td>

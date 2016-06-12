@@ -43,6 +43,16 @@ class ViewComposerServiceProvide extends ServiceProvider
 
             return $view->with(compact('weibo','qq','wechat','link','link_type','image','footer_about'));
         });
+        view()->composer("admin.index", function($view) {
+            $culture = \Hanya\Culture::count();
+            $course  = \Hanya\Course::count();
+            $teacher = \Hanya\Teacher::count();
+            $train   = \Hanya\Train::count();
+            $link    = count(\Hanya\Configuration::link()->captions);
+            $count = \Hanya\Culture::all()->sum('count')+\Hanya\Course::all()->sum('count')+\Hanya\Train::all()->sum('count')+\Hanya\Teacher::all()->sum('count');
+
+            return $view->with(compact('culture','course','teacher','train','link','count'));
+        });
     }
 
     protected function passThroughFooterAboutInfo()

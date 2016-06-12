@@ -24,8 +24,8 @@
                 <tbody>
                 @foreach($trains as $train)
                     <tr data-id="{{ $train->id }}">
-                        <td><i class="fa fa-chart"></i></td>
-                        <td><a href="{{ $train->detailLink() }}"></a>{{ str_limit($train->title,20) }}</td>
+                        <td><i class="fa fa-bar-chart"></i></td>
+                        <td><a href="{{ $train->detailLink() }}">{{ str_limit($train->title,20) }}</a></td>
                         <td>{{ $train->author }}</td>
                         <td>{{ $train->created_at }}</td>
                         <td>
