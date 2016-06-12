@@ -28,7 +28,12 @@ class TeacherRequest extends Request
             'body' => 'required',
         ];
     }
-    
+
+    /**
+     * 验证不通过时返回的错误信息
+     * 
+     * @return array
+     */
     public function messages()
     {
         return [

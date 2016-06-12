@@ -28,6 +28,9 @@ class ViewComposerServiceProvide extends ServiceProvider
         //
     }
 
+    /**
+     * 注入到后台的属性
+     */
     protected function passThroughAdminAttr()
     {
         view()->composer("admin.home.index", function($view) {
@@ -55,6 +58,9 @@ class ViewComposerServiceProvide extends ServiceProvider
         });
     }
 
+    /**
+     * 注入到底部的信息
+     */
     protected function passThroughFooterAboutInfo()
     {
         view()->composer("layouts.partials.app-footer", function($view) {
@@ -66,6 +72,9 @@ class ViewComposerServiceProvide extends ServiceProvider
         });
     }
 
+    /**
+     * 注入到前端主页的信息
+     */
     protected function passThroughIndexInfo()
     {
         view()->composer("index", function($view) {

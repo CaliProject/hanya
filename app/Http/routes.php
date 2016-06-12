@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::post('upload','ManagerController@uploadImage');
 Route::group(['middleware' => ['web']], function (){
     Route::auth();
@@ -40,6 +37,8 @@ Route::group(['middleware' => ['web']], function (){
     //汉雅后台路由
     Route::group(['prefix' => 'manage'], function (){
         Route::get('','ManagerController@index');
+        Route::get('password','ManagerController@showPassword');
+        Route::patch('password/{user}','ManagerController@updatePassword');
         //香道文化的后台路由
         Route::group(['prefix' => 'culture'], function (){
             Route::get('','ManagerController@showCulture');

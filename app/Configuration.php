@@ -99,6 +99,9 @@ class Configuration extends Model
         return is_null(static::where('key',$key)->first()) ? static::create($attributes) : static::where('key',$key)->update($attributes);
     }
 
+    /**
+     * 初始化配置信息
+     */
     public static function initData()
     {
         self::link([

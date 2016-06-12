@@ -28,16 +28,31 @@ class Course extends Model
         return url('manage/course/detail/'.$this->id);
     }
 
+    /**
+     * 前端课程通知详情链接
+     * 
+     * @return mixed
+     */
     public function showLink()
     {
         return url('course/'.$this->id);
     }
 
+    /**
+     * 下一篇课程通知
+     * 
+     * @return mixed
+     */
     public function next()
     {
         return static::where([['created_at','>',$this->created_at],['id','!=',$this->id]])->first();
     }
 
+    /**
+     * 上一篇课程通知
+     * 
+     * @return mixed
+     */
     public function previous()
     {
         return static::where([['created_at','<',$this->created_at],['id','!=',$this->id]])->first();

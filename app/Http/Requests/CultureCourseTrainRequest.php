@@ -30,7 +30,12 @@ class CultureCourseTrainRequest extends Request
             'body'   => 'required'
         ];
     }
-
+    
+    /**
+     * 验证不通过时返回信息
+     * 
+     * @return array
+     */
     public function messages()
     {
         return [

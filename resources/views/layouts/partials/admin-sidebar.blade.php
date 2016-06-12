@@ -9,5 +9,6 @@
         <li><a href="{{ url('manage/about') }}" class="{{ request()->is('manage/about*') ? 'selected' : '' }}"><i class="fa fa-hand-o-right icon-btn"></i>&nbsp;关于汉雅</a></li>
         <li><a href="{{ url('manage/job') }}" class="{{ request()->is('manage/job*') ? 'selected' : '' }}"><i class="fa fa-archive icon-btn"></i>&nbsp;招贤纳士</a></li>
         <li><a href="{{ url('manage/link') }}" class="{{ request()->is('manage/link*') ? 'selected' : '' }}"><i class="fa fa-link icon-btn"></i>&nbsp;友情链接</a></li>
+        <li><a href="{{ url('manage/password') }}" class="{{ request()->is('manage/password*') ? 'selected' : '' }}"><i class="fa fa-edit icon-btn"></i>&nbsp;修改密码</a></li>
     </ul>
 </aside>

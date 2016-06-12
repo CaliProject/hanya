@@ -12,10 +12,12 @@ use Hanya\Culture;
 use Hanya\Teacher;
 use Hanya\APIResponse;
 use Hanya\Configuration;
+use Hanya\User;
 use Illuminate\Http\Request;
 use Hanya\Http\Requests\TeacherRequest;
 use Hanya\Http\Requests\CultureCourseTrainRequest;
 use Hanya\Http\Requests\LinkFormRequest;
+use Illuminate\Support\Facades\Hash;
 
 class ManagerController extends Controller
 {
@@ -562,6 +564,12 @@ class ManagerController extends Controller
         return view('admin.home.index');
     }
 
+    /**
+     * 修改主页图片
+     * 
+     * @param Request $request
+     * @return array
+     */
     public function editHomeImage(Request $request)
     {
         if (empty($request->input('image'))) {
@@ -575,6 +583,12 @@ class ManagerController extends Controller
         }
     }
 
+    /**
+     * 修改主页视频链接
+     * 
+     * @param Request $request
+     * @return array
+     */
     public function editHomeLink(Request $request)
     {
         if (empty($request->input('link'))) {
@@ -591,6 +605,12 @@ class ManagerController extends Controller
         }
     }
 
+    /**
+     * 修改微博外链信息
+     * 
+     * @param Request $request
+     * @return array
+     */
     public function editWeibo(Request $request)
     {
         $this->validate($request,[
@@ -602,6 +622,12 @@ class ManagerController extends Controller
         return Configuration::social($social) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
     }
 
+    /**
+     * 修改QQ外链信息
+     * 
+     * @param Request $request
+     * @return array
+     */
     public function editQQ(Request $request)
     {
         $this->validate($request,[
@@ -613,6 +639,12 @@ class ManagerController extends Controller
         return Configuration::social($social) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
     }
 
+    /**
+     * 修改微信外链信息
+     * 
+     * @param Request $request
+     * @return array
+     */
     public function editWechat(Request $request)
     {
         $this->validate($request,[
@@ -627,6 +659,12 @@ class ManagerController extends Controller
         return Configuration::social($social) ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！请重试！');
     }
 
+    /**
+     * 修改底部联系信息
+     * 
+     * @param FooterFormRequest $request
+     * @return array
+     */
     public function editFooter(FooterFormRequest $request)
     {
         $home = Configuration::home();
@@ -637,5 +675,25 @@ class ManagerController extends Controller
         $home->footer_about->address   = $request->input('address');
 
         return Configuration::home($home) ? $this->successResponse('修改成功！') : $this->errorResponse('修改失败！请重试！');
+    }
+
+    public function showPassword()
+    {
+        return view('admin.password');
+    }
+
+    public function updatePassword(Request $request,User $user)
+    {
+        $this->validate($request,[
+            'old_password' => 'required',
+            'password'     => 'required|confirmed'
+        ]);
+        if (Hash::check($request->input('old_password'),$user->password)) {
+            $user->password = bcrypt($request->input('password'));
+            
+            return $user->save() ? $this->successResponse('修改成功！','manage/home') : $this->errorResponse('修改失败！');
+        } else {
+            return $this->errorResponse('原密码不正确！');
+        }
     }
 }

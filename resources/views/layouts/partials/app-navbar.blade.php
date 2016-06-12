@@ -34,6 +34,7 @@
                     <li>
                         <a href="{{ url('manage') }}">后台管理</a>
                     </li>
+                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-btn"></i>退出</a></li>
                 </ul>
             @endif
         </div>
