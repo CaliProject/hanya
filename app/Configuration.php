@@ -75,7 +75,8 @@ class Configuration extends Model
     public static function getConfigurationByKey($key)
     {
         try {
-            $conf = Cache::has('conf.' . $key) ? Cache::get('conf.' . $key) : static::where('key',$key)->first();
+            $conf = static::where('key',$key)->first();
+//            $conf = Cache::has('conf.' . $key) ? Cache::get('conf.' . $key) : static::where('key',$key)->first();
         } catch (\Exception $e) {
             return false;
         }
@@ -108,7 +109,7 @@ class Configuration extends Model
             'data' => is_object($values[0]) || is_array($values[0]) ? json_encode($values[0]) : $values[0]
         ];
         
-        Cache::put('conf.' . $key, $attributes['data'], 30);
+//        Cache::put('conf.' . $key, $attributes['data'], 30);
 
         return is_null(static::where('key',$key)->first()) ? static::create($attributes) : static::where('key',$key)->update($attributes);
     }
