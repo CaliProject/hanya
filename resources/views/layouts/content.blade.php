@@ -33,13 +33,13 @@
             </div>
             <div class="panel panel--hanya">
                 <div class="panel-heading">
-                    <h4 class="panel-title">培训动态</h4>
+                    <h4 class="panel-title">课程通知</h4>
                 </div>
                 <div class="panel-body">
                     <ul class="List List--filled">
-                        @foreach($trains as $train)
+                        @foreach($courses as $course)
                             <li>
-                                <a href="{{ $train->showLink() }}">{{ str_limit($train->title,15) }}</a>
+                                <a href="{{ $course->showLink() }}">{{ str_limit($course->title,15) }}</a>
                             </li>
                         @endforeach
                     </ul>

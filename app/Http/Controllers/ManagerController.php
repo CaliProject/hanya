@@ -677,11 +677,23 @@ class ManagerController extends Controller
         return Configuration::home($home) ? $this->successResponse('修改成功！') : $this->errorResponse('修改失败！请重试！');
     }
 
+    /**
+     * 显示修改密码页面
+     * 
+     * @return mixed
+     */
     public function showPassword()
     {
         return view('admin.password');
     }
 
+    /**
+     * 修改管理员密码
+     * 
+     * @param Request $request
+     * @param User $user
+     * @return array
+     */
     public function updatePassword(Request $request,User $user)
     {
         $this->validate($request,[

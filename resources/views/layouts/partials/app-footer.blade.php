@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p>&copy; {{ date('Y') }} 汉雅. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} @conf('home.footer_about.copyright'). All rights reserved.</p>
     </div>
     <div class="friend-links">
         <ul>

@@ -78,18 +78,18 @@ class ViewComposerServiceProvide extends ServiceProvider
     protected function passThroughIndexInfo()
     {
         view()->composer("index", function($view) {
-            $cultures = \Hanya\Culture::orderBy('created_at','desc')->take(6)->get();
+            $cultures = \Hanya\Culture::orderBy('created_at','desc')->take(10)->get();
             $courses  = \Hanya\Course::orderBy('created_at','desc')->take(10)->get();
-            $trains   = \Hanya\Train::orderBy('created_at','desc')->take(8)->get();
+            $trains   = \Hanya\Train::orderBy('created_at','desc')->take(10)->get();
             $teachers  = \Hanya\Teacher::orderBy('is_good')->take(3)->get();
             $link = \Hanya\Configuration::home()->link;
             
             return $view->with(compact('cultures','courses','trains','teachers','link'));
         });
         view()->composer("layouts.content", function($view) {
-            $trains = \Hanya\Train::orderBy('created_at','desc')->take(10)->get();
+            $courses = \Hanya\Course::orderBy('created_at','desc')->take(10)->get();
 
-            return $view->with(compact('trains'));
+            return $view->with(compact('courses'));
         });
         view()->composer("layouts.partials.app-navbar", function($view) {
             $weibo = \Hanya\Configuration::social()->weibo;

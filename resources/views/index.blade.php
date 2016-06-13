@@ -17,13 +17,13 @@
                         <a class="more" href="{{ url('course') }}"></a>
                     </div>
                     <div class="panel-body">
-                        <ul class="List List--big">
+                        <ul class="List List--big List--filled">
                             @foreach($courses as $course)
                                 <li>
                                     <a href="{{ $course->showLink() }}">
                                         {{ str_limit($course->title,20) }}
-                                        <time>{{ $course->created_at->toDateString() }}</time>
                                     </a>
+                                    <time>{{ $course->created_at->toDateString() }}</time>
                                 </li>
                             @endforeach
                         </ul>
@@ -39,9 +39,14 @@
                         <a class="more" href="{{ url('culture') }}"></a>
                     </div>
                     <div class="panel-body">
-                        <ul class="List List--bullet">
+                        <ul class="List List--big List--filled">
                             @foreach($cultures as $culture)
-                                <li><a href="{{ $culture->showLink() }}">{{ str_limit($culture->title,20) }}</a></li>
+                                <li>
+                                    <a href="{{ $culture->showLink() }}">
+                                        {{ str_limit($culture->title,20) }}
+                                    </a>
+                                    <time>{{ $culture->created_at->toDateString() }}</time>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -60,6 +65,7 @@
                                     <a href="{{ $train->showLink() }}">
                                         {{ str_limit($train->title,50) }}
                                     </a>
+                                    <time>{{ $train->created_at->toDateString() }}</time>
                                 </li>
                             @endforeach
                         </ul>
