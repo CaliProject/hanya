@@ -5780,7 +5780,7 @@ body {
   box-sizing: border-box; }
 
 a {
-  color: #BA0116; }
+  color: #A62A2A; }
   a:hover {
     text-decoration: none; }
 
@@ -5807,7 +5807,7 @@ a {
     clear: both; }
 
 .panel--hanya .panel-heading {
-  border-bottom: 1px solid #BA0116;
+  border-bottom: 1px solid #A62A2A;
   position: relative; }
   .panel--hanya .panel-heading:before {
     content: '';
@@ -5914,7 +5914,7 @@ a {
     font-size: 1.15em;
     font-weight: 400; }
     .Breadcrumb li a {
-      color: rgba(186, 1, 22, 0.6); }
+      color: rgba(166, 42, 42, 0.6); }
     .Breadcrumb li.active {
       color: #ccc !important; }
 
@@ -5923,29 +5923,29 @@ a {
 
 .pagination > :not(.active) > span, .pagination a {
   background: #EAFAF5 !important;
-  color: #BA0116 !important; }
+  color: #A62A2A !important; }
 
 .pagination > .active > span {
-  background: #BA0116 !important;
-  border-color: #BA0116 !important; }
+  background: #A62A2A !important;
+  border-color: #A62A2A !important; }
 
 .pagination > li > a, .pagination > li > span {
   border: none !important; }
 
 .Nav {
   height: 65px;
-  background: #EAFAF5;
-  background-color: rgba(234, 250, 245, 0.8);
-  background-image: linear-gradient(to bottom, #EAFAF5, rgba(234, 250, 245, 0.5));
+  background: #790e3f;
+  background-color: rgba(121, 14, 63, 0.8);
+  background-image: linear-gradient(to bottom, #790e3f, rgba(121, 14, 63, 0.5));
   color: #1C2A22;
   box-shadow: 0 1px 5px rgba(5, 5, 5, 0.2); }
   .Nav > div {
     margin-top: 5px; }
   .Nav a {
-    color: #BA0116;
+    color: #fff;
     font-weight: bold; }
     .Nav a:hover {
-      color: #70003D;
+      color: #ffff4f;
       background: none !important; }
   .Nav .navbar-brand {
     padding: 8px 20px; }
@@ -6002,7 +6002,7 @@ a {
 
 .nav .open > a, .nav a:active, .nav a:focus {
   background: transparent !important;
-  color: #70003D; }
+  color: #620B33; }
 
 li.on:after {
   position: absolute;
@@ -6010,7 +6010,7 @@ li.on:after {
   bottom: -15px;
   width: 0;
   height: 0;
-  border-color: rgba(234, 250, 245, 0.95) transparent transparent;
+  border-color: rgba(121, 14, 63, 0.95) transparent transparent;
   border-width: 6px 6px 0;
   border-style: solid;
   display: block;
@@ -6023,9 +6023,9 @@ li.on:after {
   background: #EAFAF5;
   color: #1C2A22; }
   .Footer a {
-    color: #BA0116; }
+    color: #A62A2A; }
     .Footer a:hover {
-      color: #70003D; }
+      color: #620B33; }
 
 .culture {
   text-align: center;
@@ -6053,7 +6053,7 @@ li.on:after {
 .icp {
   padding: 1.5em; }
   .icp span {
-    color: #BA0116;
+    color: #A62A2A;
     font-weight: 200; }
 
 .friend-links {
@@ -6210,7 +6210,7 @@ li.on:after {
     padding: 0 1em .5em;
     font-weight: bold;
     font-size: 2em;
-    color: #BA0116; }
+    color: #A62A2A; }
   .Article .Article__meta [author] {
     display: inline-block;
     line-height: 50px;

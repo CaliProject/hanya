@@ -1,8 +1,8 @@
 .Nav {
   height: 65px;
-  background: $secondary-background;
-  background-color: rgba($secondary-background, .8);
-  background-image: linear-gradient(to bottom, $secondary-background, rgba($secondary-background, .5));
+  background: $nav-bg;
+  background-color: rgba($nav-bg, .8);
+  background-image: linear-gradient(to bottom, $nav-bg, rgba($nav-bg, .5));
   color: $font-color;
   box-shadow: 0 1px 5px rgba(5,5,5,.2);
 
@@ -11,11 +11,11 @@
   }
 
   a {
-    color: $link-color;
+    color: #fff;
     font-weight: bold;
 
     &:hover {
-      color: $link-hover;
+      color: #ffff4f;
       background: none !important;
     }
   }
@@ -96,7 +96,7 @@ li.on:after {
   bottom: -15px;
   width: 0;
   height: 0;
-  border-color: rgba($secondary-background, .95) transparent transparent;
+  border-color: rgba($nav-bg, .95) transparent transparent;
   border-width: 6px 6px 0;
   border-style: solid;
   display: block;
