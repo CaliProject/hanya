@@ -6033,6 +6033,20 @@ li.on:after {
   .culture img {
     max-height: 90px; }
 
+.contact {
+  padding: 1.5em 0; }
+  .contact .details {
+    color: #888; }
+    .contact .details span {
+      margin: 0 .6em; }
+  .contact .social > div {
+    display: inline-block;
+    margin: 1em .8em; }
+  .contact .social .qq {
+    color: #07abdd; }
+  .contact .social .wechat {
+    color: #30aa1a; }
+
 .copyright p {
   font-size: 1.2em; }
 

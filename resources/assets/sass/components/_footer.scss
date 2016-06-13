@@ -22,6 +22,33 @@
   }
 }
 
+.contact {
+  padding: 1.5em 0;
+
+  .details {
+    color: #888;
+    
+    span {
+      margin: 0 .6em;
+    }
+  }
+
+  .social {
+    > div {
+      display: inline-block;
+      margin: 1em .8em;
+    }
+    
+    .qq {
+      color: $qq-color;
+    }
+    
+    .wechat {
+      color: $wechat-color;
+    }
+  }
+}
+
 .copyright {
   p {
     font-size: 1.2em;

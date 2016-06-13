@@ -63,13 +63,13 @@ class ViewComposerServiceProvide extends ServiceProvider
      */
     protected function passThroughFooterAboutInfo()
     {
-        view()->composer("layouts.partials.app-footer", function($view) {
-            $links  = \Hanya\Configuration::link()->captions;
-            $social = \Hanya\Configuration::social();
-            $about  = \Hanya\Configuration::home()->footer_about;
-
-            return $view->with(compact('links','social','about'));
-        });
+//        view()->composer("layouts.partials.app-footer", function($view) {
+//            $links  = \Hanya\Configuration::link()->captions;
+//            $social = \Hanya\Configuration::social();
+//            $about  = \Hanya\Configuration::home()->footer_about;
+//
+//            return $view->with(compact('links','social','about'));
+//        });
     }
 
     /**
