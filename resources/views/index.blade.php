@@ -43,7 +43,7 @@
                             @foreach($cultures as $culture)
                                 <li>
                                     <a href="{{ $culture->showLink() }}">
-                                        {{ str_limit($culture->title,20) }}
+                                        {{ str_limit($culture->title,50) }}
                                     </a>
                                     <time>{{ $culture->created_at->toDateString() }}</time>
                                 </li>
@@ -82,9 +82,12 @@
                     </div>
                     <div class="panel-body">
                         @foreach($teachers as $teacher)
-                            <a href="{{ $teacher->showLink() }}" class="Teacher col-md-4">
+                            <a href="{{ $teacher->showLink() }}" class="Teacher col-md-3">
                                 <div class="Teacher__avatar" style="background-image: url('{{ $teacher->image }}')"></div>
-                                <span class="Teacher__name">{{ $teacher->name }}</span>
+                                <span class="Teacher__name">
+                                    {{ $teacher->name }}
+                                </span>
+                                <p>{{ $teacher->content }}</p>
                             </a>
                         @endforeach
                     </div>

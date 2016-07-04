@@ -26,6 +26,7 @@ class TeacherRequest extends Request
         return [
             'name' => 'required',
             'body' => 'required',
+            'content' => 'required'
         ];
     }
 
@@ -38,7 +39,8 @@ class TeacherRequest extends Request
     {
         return [
             'name.required' => '老师姓名必填！',
-            'body.required' => '老师介绍必填！'
+            'body.required' => '老师介绍必填！',
+            'content.required' => '老师简介必填！'
         ];
     }
 }
