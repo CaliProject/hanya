@@ -18,6 +18,9 @@
 @import "manage/base";
 @import "manage/sidebar";
 
+// Responsive styles
+@import "components/mobile";
+
 // Plugins
 @import "plugins/toastr";
 @import "plugins/select2";

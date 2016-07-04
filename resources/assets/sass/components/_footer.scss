@@ -16,14 +16,30 @@
 .culture {
   text-align: center;
   margin: 2.5em 0;
+  clear: both;
 
   img {
-    max-height: 90px;
+    height: 90px;
+  }
+
+  ul {
+    text-align: left;
+    list-style: none;
+
+    li {
+      line-height: 35px;
+    }
+  }
+
+  &:after {
+    content: '';
+    padding-bottom: 7%;
+    display: block;
   }
 }
 
 .contact {
-  padding: 1.5em 0;
+  padding: .5em 0;
 
   .details {
     color: #888;
@@ -50,6 +66,7 @@
 }
 
 .copyright {
+  clear: both;
   p {
     font-size: 1.2em;
   }

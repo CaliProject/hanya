@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="Video Video--full">
-                    <iframe src="http://player.youku.com/embed/{{ $link }}==" allowfullscreen></iframe>
+                    <iframe src="http://player.youku.com/embed/{{ str_replace('.html', '', $link) }}==" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col-md-6">

@@ -1,22 +1,38 @@
 <!-- Footer -->
 <footer class="Footer">
     <div class="culture">
-        <img src="{{ url('assets/culture.png') }}" alt="香道文化">
-    </div>
-    <div class="contact">
-        <div class="details">
-            <span class="tel"><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</span>
-            <span class="address"><i class="fa fa-building"></i>&nbsp;@conf('home.footer_about.address')</span>
+        <div class="col-sm-2 col-sm-offset-3">
+            <img src="{{ url('assets/culture.png') }}" alt="香道文化">
         </div>
-        <div class="social">
-            <div class="qq">
-                <i class="fa fa-qq"></i>&nbsp;@conf('home.footer_about.qq')
+        <div class="col-sm-4 contact">
+            <div class="col-xs-6 details">
+                <ul class="details">
+                    <li><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</li>
+                    <li><i class="fa fa-building"></i>&nbsp;@conf('home.footer_about.address')</li>
+                </ul>
             </div>
-            <div class="wechat">
-                <i class="fa fa-wechat"></i>&nbsp;@conf('home.footer_about.wechat')
+            <div class="col-xs-6">
+                <ul class="social">
+                    <li class="qq"><i class="fa fa-qq"></i>&nbsp;@conf('home.footer_about.qq')</li>
+                    <li class="wechat"><i class="fa fa-wechat"></i>&nbsp;@conf('home.footer_about.wechat')</li>
+                </ul>
             </div>
         </div>
     </div>
+    {{--<div class="contact">--}}
+        {{--<div class="details">--}}
+            {{--<span class="tel"><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</span>--}}
+            {{--<span class="address"><i class="fa fa-building"></i>&nbsp;@conf('home.footer_about.address')</span>--}}
+        {{--</div>--}}
+        {{--<div class="social">--}}
+            {{--<div class="qq">--}}
+                {{--<i class="fa fa-qq"></i>&nbsp;@conf('home.footer_about.qq')--}}
+            {{--</div>--}}
+            {{--<div class="wechat">--}}
+                {{--<i class="fa fa-wechat"></i>&nbsp;@conf('home.footer_about.wechat')--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <div class="copyright">
         <p>&copy; {{ date('Y') }} @conf('home.footer_about.copyright'). All rights reserved.</p>
     </div>
@@ -41,17 +57,20 @@
     <div class="unit back-top hide">
         <i class="fa fa-angle-up"></i>
     </div>
-    <div class="unit unit--slide weibo" slide-text="关注微博" clickable="@conf('social.weibo')">
+    <div class="unit weibo" slide-text="关注微博" clickable="@conf('social.weibo')">
         <i class="fa fa-weibo"></i>
+        <span>关注微博</span>
     </div>
-    <div class="unit unit--slide unit--fancy wechat" slide-text="关注微信" clickable="http://weixin.sogou.com/weixin?type=1&query=@conf('social.wechat.name')">
+    <div class="unit unit--fancy wechat" slide-text="关注微信" clickable="http://weixin.sogou.com/weixin?type=1&query=@conf('social.wechat.name')">
         <i class="fa fa-wechat"></i>
+        <span>关注微信</span>
         <div class="unit__aux">
             <img src="@conf('social.wechat.image')" class="qr-code" alt="微信公众号二维码">
         </div>
     </div>
-    <div class="unit unit--slide qq" slide-text="联系QQ" clickable="http://wpa.qq.com/msgrd?V=1&Uin=@conf('social.qq')&Site={{ url()->current() }}&Menu=yes">
+    <div class="unit qq" slide-text="联系QQ" clickable="http://wpa.qq.com/msgrd?V=1&Uin=@conf('social.qq')&Site={{ url()->current() }}&Menu=yes">
         <i class="fa fa-qq"></i>
+        <span>联系QQ</span>
     </div>
 </aside>
 @stack('footer')
