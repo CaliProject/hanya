@@ -51,7 +51,7 @@ class ViewComposerServiceProvide extends ServiceProvider
             $course  = \Hanya\Course::count();
             $teacher = \Hanya\Teacher::count();
             $train   = \Hanya\Train::count();
-            $link    = count(\Hanya\Configuration::link()->captions);
+            $link    = count(\Hanya\Configuration::link()->captions)-1;
             $count = \Hanya\Culture::all()->sum('count')+\Hanya\Course::all()->sum('count')+\Hanya\Train::all()->sum('count')+\Hanya\Teacher::all()->sum('count');
 
             return $view->with(compact('culture','course','teacher','train','link','count'));
@@ -81,7 +81,7 @@ class ViewComposerServiceProvide extends ServiceProvider
             $cultures = \Hanya\Culture::orderBy('created_at','desc')->take(10)->get();
             $courses  = \Hanya\Course::orderBy('created_at','desc')->take(10)->get();
             $trains   = \Hanya\Train::orderBy('created_at','desc')->take(10)->get();
-            $teachers  = \Hanya\Teacher::orderBy('is_good')->take(3)->get();
+            $teachers  = \Hanya\Teacher::orderBy('is_good')->take(4)->get();
             $link = \Hanya\Configuration::home()->link;
             
             return $view->with(compact('cultures','courses','trains','teachers','link'));
