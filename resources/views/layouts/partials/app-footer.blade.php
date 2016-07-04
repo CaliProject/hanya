@@ -4,15 +4,11 @@
         <div class="col-sm-2 col-sm-offset-3">
             <img src="{{ url('assets/culture.png') }}" alt="香道文化">
         </div>
-        <div class="col-sm-4 contact">
-            <div class="col-xs-6 details">
-                <ul class="details">
+        <div class="col-sm-6 contact">
+            <div class="col-xs-12 details">
+                <ul class="details social">
                     <li><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</li>
                     <li><i class="fa fa-building"></i>&nbsp;@conf('home.footer_about.address')</li>
-                </ul>
-            </div>
-            <div class="col-xs-6">
-                <ul class="social">
                     <li class="qq"><i class="fa fa-qq"></i>&nbsp;@conf('home.footer_about.qq')</li>
                     <li class="wechat"><i class="fa fa-wechat"></i>&nbsp;@conf('home.footer_about.wechat')</li>
                 </ul>
