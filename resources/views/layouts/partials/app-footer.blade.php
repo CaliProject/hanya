@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="Footer">
     <div class="culture">
-        <div class="col-sm-2 col-sm-offset-3">
+        <div class="col-sm-2 col-sm-offset-4">
             <img src="{{ url('assets/culture.png') }}" alt="香道文化">
         </div>
         <div class="col-sm-6 contact">
