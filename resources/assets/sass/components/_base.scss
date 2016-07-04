@@ -175,6 +175,7 @@ a {
 
 .Left {
   @extend .col-md-3, .col-sm-2;
+  z-index: 999;
 }
 
 .Right {
