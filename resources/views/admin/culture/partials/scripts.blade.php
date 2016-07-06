@@ -4,7 +4,7 @@
 
         @if( isset($culture->body) || old('body'))
         setTimeout(function () {
-            $(".summernote").summernote('code', '{!! empty($culture->body) ? addslashes(old('body')) : $culture->body  !!}');
+            $(".summernote").summernote('code', '{!! empty($culture->body) ? addslashes(old('body')) : addslashes($culture->body)  !!}');
         },500);
         @endif
 
