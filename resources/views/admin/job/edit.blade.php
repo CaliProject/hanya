@@ -33,7 +33,7 @@
 
         @if( isset($job->body) || old('body'))
         setTimeout(function () {
-            $(".summernote").summernote('code', '{!! empty($job->body) ? addslashes(old('body')) : addslashes($job->body)  !!}');
+            $(".summernote").summernote('code', '{!! empty($job->body) ? nl2br(addslashes(old('body'))) : nl2br(addslashes($job->body))  !!}');
         },500);
         @endif
 

@@ -4,7 +4,7 @@
 
         @if( isset($course->body) || old('body'))
         setTimeout(function () {
-            $(".summernote").summernote('code', '{!! empty($course->body) ? addslashes(old('body')) : addslashes($course->body)  !!}');
+            $(".summernote").summernote('code', '{!! empty($course->body) ? nl2br(addslashes(old('body'))) : nl2br(addslashes($course->body))  !!}');
         },500);
         @endif
 
