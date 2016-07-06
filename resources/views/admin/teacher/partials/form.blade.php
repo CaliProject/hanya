@@ -12,7 +12,7 @@
     </div>
     <div class="form-group{{ $errors->has('content') ? 'has-error' : '' }}">
         <label for="content" class="control-label" required>老师简介:</label>
-        <input type="text" class="form-control important" id="content" name="content" value="{{ empty($content) ? old('content') : $teacher->content }}">
+        <input type="text" class="form-control important" id="content" name="content" value="{{ empty($teacher) ? old('content') : $teacher->content }}">
         @if($errors->has('content'))
             <div class="help-block">
                 <strong>{{ $errors->first('content') }}</strong>
