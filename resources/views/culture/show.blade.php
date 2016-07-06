@@ -25,6 +25,9 @@
             <div stat>
                 <ul>
                     <li>
+                        <i class="fa fa-cloud"></i>&nbsp;来源: {{ $culture->source }}
+                    </li>
+                    <li>
                         <i class="fa fa-clock-o"></i>&nbsp;发布于: {{ $culture->created_at->diffForHumans() }}
                     </li>
                     <li>

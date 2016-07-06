@@ -19,6 +19,9 @@
             <div stat>
                 <ul>
                     <li>
+                        <i class="fa fa-cloud"></i>&nbsp;来源: {{ $train->source }}
+                    </li>
+                    <li>
                         <i class="fa fa-clock-o"></i>&nbsp;发布于: {{ $train->created_at->diffForHumans() }}
                     </li>
                     <li>

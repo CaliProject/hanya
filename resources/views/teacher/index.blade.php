@@ -7,11 +7,16 @@
 @stop
 
 @section('right')
-    @foreach($teachers as $teacher)
-        <a href="{{ $teacher->showLink() }}" class="Teacher col-md-4">
-            <div class="Teacher__avatar" style="background-image: url('{{ $teacher->image }}')"></div>
-            <span class="Teacher__name">{{ $teacher->name }}</span>
-        </a>
+    @foreach($teachers->chunk(3) as $chunk)
+        <div class="row">
+            @foreach($chunk as $teacher)
+                <a href="{{ $teacher->showLink() }}" class="Teacher col-md-4">
+                    <div class="Teacher__avatar" style="background-image: url('{{ $teacher->image }}')"></div>
+                    <span class="Teacher__name">{{ $teacher->name }}</span>
+                    <p>{{ $teacher->content }}</p>
+                </a>
+            @endforeach
+        </div>
     @endforeach
     <div class="row text-center">
         {!! $teachers->links() !!}
