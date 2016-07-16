@@ -46,7 +46,7 @@
     </div>
     <div class="icp">
         {{-- TODO: 读取备案号Conf --}}
-        <span>粤ICP备233333号</span>
+        <span>粤ICP备16062995号</span>
     </div>
 </footer>
 <!-- Side utilities -->
