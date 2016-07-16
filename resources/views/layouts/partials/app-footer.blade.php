@@ -1,20 +1,20 @@
 <!-- Footer -->
 <footer class="Footer">
-    <div class="culture">
-        <div class="col-sm-2 col-sm-offset-4">
-            <img src="{{ url('assets/culture.png') }}" alt="香道文化">
-        </div>
-        <div class="col-sm-6 contact">
-            <div class="col-xs-12 details">
-                <ul class="details social">
-                    <li><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</li>
-                    <li><i class="fa fa-building"></i>&nbsp;@conf('home.footer_about.address')</li>
-                    <li class="qq"><i class="fa fa-qq"></i>&nbsp;@conf('home.footer_about.qq')</li>
-                    <li class="wechat"><i class="fa fa-wechat"></i>&nbsp;@conf('home.footer_about.wechat')</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    {{--<div class="culture">--}}
+        {{--<div class="col-sm-2 col-sm-offset-4">--}}
+            {{--<img src="{{ url('assets/culture.png') }}" alt="香道文化">--}}
+        {{--</div>--}}
+        {{--<div class="col-sm-6 contact">--}}
+            {{--<div class="col-xs-12 details">--}}
+                {{--<ul class="details social">--}}
+                    {{--<li><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</li>--}}
+                    {{--<li><i class="fa fa-building"></i>&nbsp;@conf('home.footer_about.address')</li>--}}
+                    {{--<li class="qq"><i class="fa fa-qq"></i>&nbsp;@conf('home.footer_about.qq')</li>--}}
+                    {{--<li class="wechat"><i class="fa fa-wechat"></i>&nbsp;@conf('home.footer_about.wechat')</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     {{--<div class="contact">--}}
         {{--<div class="details">--}}
             {{--<span class="tel"><i class="fa fa-phone"></i>&nbsp;@conf('home.footer_about.telephone')</span>--}}
@@ -31,6 +31,7 @@
     {{--</div>--}}
     <div class="copyright">
         <p>&copy; {{ date('Y') }} @conf('home.footer_about.copyright'). All rights reserved.</p>
+        <span>移动电话: @conf('home.footer_about.telephone') &nbsp; 公司地址: @conf('home.footer_about.address') &nbsp; QQ: @conf('home.footer_about.qq') &nbsp; 微信公众号: @conf('home.footer_about.wechat')</>
     </div>
     <div class="friend-links">
         <ul>

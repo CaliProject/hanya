@@ -20,14 +20,20 @@ a {
 
 .Hero {
   margin-top: 5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  //box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 
   .Hero__banner {
-    width: 100%;
-    height: $banner-height;
+    @extend .container;
+    min-height: 5px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 37.5%;
+    }
   }
 }
 
