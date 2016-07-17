@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- TODO: 动态Title --}}
-    <title>@yield('title') | 汉雅</title>
+    <title>@yield('title') | 汉雅香道</title>
 
     <!-- Styles -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
